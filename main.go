@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"github.com/b0mink/Job-Scrapper/scrapper"
+)
+
 
 func main() {
-	fmt.Println("this will be main")
+	baseURL := "https://www.indeed.com/jobs?q=python&limit=50"
+	scrapper.Scrape(baseURL)
 }
