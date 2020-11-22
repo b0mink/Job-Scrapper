@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <title>Job Scraper</title>
+    <style>
+        .btn {
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        padding: 10px 16px;
+        }
+        
+        .btn-lg {
+        font-size: 18px;
+        line-height: 1.33;
+        border-radius: 6px;
+        }
+
+        .btn-primary {
+        color: rgba(255, 255, 255, 0);
+        background-color: #ffffff;
+        border-color: #ffffff;
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus,
+        .btn-primary:active,
+        .btn-primary.active,
+        .open .dropdown-toggle.btn-primary {
+        color: rgba(255, 255, 255, 0);
+        background-color: #c4ced6;
+        border-color: #c4ced6;
+        }
+
+        /***********************
+        OUTLINE BUTTONS
+        ************************/
+
+        .btn.outline {
+        background: none;
+        padding: 12px 22px;
+        }
+        .btn-primary.outline {
+        border: 2px solid #ffffff;
+        color: #ffffff;
+        }
+        .btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+        color: #c4ced6;
+        border-color: #c4ced6;
+        }
+        .btn-primary.outline:active, .btn-primary.outline.active {
+        border-color: #ffffff;
+        color: #ffffff;
+        box-shadow: none;
+        }
+
+        /***********************
+        CUSTON BTN VALUES
+        ************************/
+
+        .btn {
+        padding: 14px 24px;
+        border: 0 none;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        }
+        .btn:focus, .btn:active:focus, .btn.active:focus {
+        outline: 0 none;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <div class="container" style="font-family:Verdana, Geneva, Tahoma, sans-serif;">
+            <br>
+            <div class="row">
+                <div class="col-md-2">
+                    <img style="float:left; width: 100%;" src="images/indeed-logo.png" alt="Indeed.com">
+                </div>
+                <div class="col-md-10">
+                    <h1>Job Search Scraper</h1>
+                </div>
+            </div>
+            <div class="container" style="padding: 5%; text-align: center;">
+                <div style="padding: 15%; background-color: #2164f4;">
+                    <div class="form-group">
+                        <div class="container text-white" style="text-align: center; font-size: 18px;">
+                            <p>Search by Keyword and Generate jobs.csv</p>
+                        </div>
+                        <div class="row">
+                              <input style="text-align: center;" class="form-control" id="term" name="term" placeholder=" Search by Keyword">
+                          </div>
+                          <br>
+                        <div class="row">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-6">
+                                <button type="button" class="btn btn-primary btn-lg outline">Generate</button>
+                            </div>
+                            <div class="col-sm-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
