@@ -10,6 +10,20 @@ How to Use
 2. Click 'GENERATE' button
 3. 'jobs.csv' will be downloaded  
 
+Process 
+---------------
+- [x] Get total page number
+
+- [x] Extract all jobs in all page
+
+- [x] Write all extracted jobs to a 'jobs.csv' file
+
+- [ ] Add goroutines
+
+- [ ] Connect to a UI
+  - [x] Create UI
+  - [ ] Enable search by keyword
+
 Screenshot 
 ---------------
 
