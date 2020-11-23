@@ -1,9 +1,11 @@
 package scrapper
 
 import (
+	"encoding/csv"
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"strconv"
 	"strings"
 
@@ -18,6 +20,8 @@ type jobDetail struct {
 	dataJK   string
 }
 
+var fileName = "jobs.csv"
+
 // Scrape jobs from an URL
 func Scrape(baseURL string) {
 	totalPages := getTotalPages(baseURL)
@@ -28,7 +32,37 @@ func Scrape(baseURL string) {
 
 	}
 
-	fmt.Println(jobs)
+	writeJobs(jobs)
+
+	fmt.Println("Done")
+}
+
+func extractDetail(i int, job jobDetail) []string {
+	url := "https://www.indeed.com/viewjob?jk="
+	id := strconv.Itoa(i + 1)
+	link := url + job.dataJK
+	return []string{id, job.title, job.location, job.salary, job.summary, link}
+}
+
+func writeJobs(jobs []jobDetail) {
+
+	file, err := os.Create(fileName)
+	checkError(err)
+
+	w := csv.NewWriter(file)
+
+	defer w.Flush()
+
+	rows := [][]string{}
+
+	rows = append(rows, []string{"ID", "TITLE", "LOCATION", "SALARY", "SUMMARY", "LINK"})
+
+	for i, job := range jobs {
+		rows = append(rows, extractDetail(i, job))
+	}
+
+	wErr := w.WriteAll(rows)
+	checkError(wErr)
 }
 
 // Extract job from a card
