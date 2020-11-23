@@ -10,7 +10,7 @@ How to Use
 2. Click 'GENERATE' button
 3. 'jobs.csv' will be downloaded  
 
-Process 
+Progress
 ---------------
 - [x] Get total page number
 
